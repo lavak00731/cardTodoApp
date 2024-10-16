@@ -1,14 +1,17 @@
 [
     {
         "id": 1,
-        "name": "sample 1"
+        "name": "sample 1",
+        "color":"#36413E"
     },
     {
         "id": 2,
-        "name": "sample 2"
+        "name": "sample 2",
+        "color": "#52050A"
     },
     {
         "id": 3,
-        "name": "sample 3"
+        "name": "sample 3",
+        "color": "#38405F"
     }
 ]
