@@ -1,3 +1,8 @@
 import { createContext } from "react";
 
-export const appContext = createContext(false);
+interface AuthProviderI { 
+    isAuthenticated: boolean;
+    login: (isLogged: boolean) => void;
+}
+
+export const appContext = createContext<AuthProviderI | null>(null);
