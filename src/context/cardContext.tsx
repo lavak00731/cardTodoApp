@@ -1,4 +1,6 @@
 import { createContext } from "react";
-import { taskInterface } from "../interfaces/taskInterface";
+import { cardContextInterface } from "../interfaces/cardContextInterface";
 
-export const cardContext = createContext<taskInterface[]>([]);
+// { tasks, isLoading }
+
+export const cardContext = createContext<cardContextInterface | undefined>(undefined);

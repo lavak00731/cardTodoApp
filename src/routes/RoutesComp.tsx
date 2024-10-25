@@ -12,7 +12,7 @@ export const RoutesComp = () => {
         <Route path="/" element={<Login />}></Route>                
         <Route  element={<Auth />}>
             <Route path="/dashboard" element={<Dashboard />}></Route>
-            <Route path="/edit-task:id" element={<Task />}></Route>
+            <Route path="/edit-task/:id" element={<Task />}></Route>
             <Route path="/create-or-edit-tags" element={<CreateOrEditTagsAndCategories/>}></Route>
             <Route path="/create-or-edit-categories" element={<CreateOrEditTagsAndCategories/>}></Route>
         </Route>

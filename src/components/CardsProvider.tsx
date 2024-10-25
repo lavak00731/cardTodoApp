@@ -1,11 +1,16 @@
-import { useEffect, useState } from "react"
-import { cardContext } from "../context/cardContext"
+import { useEffect, useState, useContext, ReactNode } from "react"
+import { cardContext } from "../context/cardContext";
+import { appContext } from "../context/appContext";
+
+
 const CardsProvider = (props: { children: ReactNode }) => {
     const [isLoading, setisLoading] = useState<boolean>(false);
-    const [tasks, setTasks] = useState([])
-    const requestTasks = async(abortController:any) => {
-        let tasksRequested
-        try {
+    const [tasks, setTasks] = useState([]);
+    const context = useContext(appContext);
+
+    const requestTasks = async(abortController: AbortController) => {
+        if(context.isAuthenticated) {
+          try {
             const taskResponse = await fetch("http://localhost:5173/api/tasks", {
                 signal: abortController.signal,
             })
@@ -13,24 +18,27 @@ const CardsProvider = (props: { children: ReactNode }) => {
                 throw new Error('Fetch Error')
             }
             setTasks(await taskResponse.json());
-            setisLoading(false)
-        } catch (error) {
-            console.log(error)
+          } catch (error) {
+              console.log(error)
+          }
         }
-        return tasksRequested;
     }
-    
+
     useEffect(() => {
         const abortController = new AbortController();
         setisLoading(true);
-        requestTasks(abortController)
-        console.log(tasks)
+        requestTasks(abortController);
+        
       return () => {
         abortController.abort();
       }
-    }, [])
+    }, []); // [] -> Se ejecute solo 1 vez cuando arranque la aplicación. Cierre la aplicación -> return
     
-    
+    // Mal
+    // useEffect(() => {
+    //   setTasks();
+    // }, [tasks]);
+
   return (
     <cardContext.Provider value={{tasks, isLoading}}>
         {props.children}

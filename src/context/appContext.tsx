@@ -1,8 +1,8 @@
 import { createContext } from "react";
+import { AuthProviderInterface } from "../interfaces/authProviderInterface";
 
-interface AuthProviderI { 
-    isAuthenticated: boolean;
-    login: (isLogged: boolean) => void;
-}
 
-export const appContext = createContext<AuthProviderI | null>(null);
+export const appContext = createContext<AuthProviderInterface>({ 
+    isAuthenticated: null,
+    login: () => {}
+});
