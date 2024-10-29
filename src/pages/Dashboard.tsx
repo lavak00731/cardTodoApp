@@ -26,12 +26,12 @@ export const Dashboard = () => {
       <Content>      
         <Title className="text-center">Dashboard</Title>
         <hr/>
-        <Row gutter={[16, 16]}>
+        <Row justify={"center"} gutter={[32, 16]}>
         {
             categoriesList.map( ({id, name}:categoryInterface) => {
               return <Col key={id}>
-                <Title level={2}>{name}</Title>
-              </Col>
+                      <Title level={2}>{name}</Title>
+                    </Col>
             })
           }
         </Row>      
