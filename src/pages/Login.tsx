@@ -17,8 +17,7 @@ export const Login = () => {
   const onFinish: FormProps<FieldType>['onFinish'] = (values) => {
     console.log('Success:', values);
     login(true);    
-    if(isAuthenticated) {
-      localStorage.setItem('isLogged', 'true')
+    if(isAuthenticated) {      
       return navigate("/dashboard", { replace: true });
     }
   };

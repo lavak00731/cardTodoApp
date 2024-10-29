@@ -1,4 +1,4 @@
-import service from "../utils/service"
+import service from "../utils/serviceGet"
 export const Dashboard = () => {
   
   return (
