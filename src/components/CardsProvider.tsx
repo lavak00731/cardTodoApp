@@ -12,6 +12,7 @@ const CardsProvider = (props: { children: ReactNode }) => {
     const requestTasks = async(url:string, abortController:AbortController) => {
       const tasks = await serviceGet(url, abortController);
       setTasks(tasks);
+      setisLoading(false);
     }
 
     useEffect(() => {
@@ -22,6 +23,7 @@ const CardsProvider = (props: { children: ReactNode }) => {
         }        
       return () => {
         abortController.abort();
+      
       }
     }, []); // [] -> Se ejecute solo 1 vez cuando arranque la aplicación. Cierre la aplicación -> return
     
