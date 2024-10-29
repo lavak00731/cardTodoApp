@@ -1,5 +1,5 @@
 import { createContext } from "react";
-import { categoryInterface } from "../interfaces/categoryInterface";
+import { categoriesInterface } from "../interfaces/categoriesInterface";
 
 //interface lo que pongo en value del provider
-export const categoryContext = createContext<categoryInterface[]>([]);
+export const categoryContext = createContext<categoriesInterface | undefined>(undefined);
