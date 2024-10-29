@@ -1,16 +1,19 @@
 import { Navigate, Outlet } from "react-router-dom";
 import { appContext } from "../context/appContext";
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 
 export const Auth = () => {
   const auth = useContext(appContext);
+ /*if(localStorage.getItem('isLogged') === 'true') {
+    auth.login(true);
+  }*/
 
-    useEffect(() => {
+    /*useEffect(() => {
       auth?.login(true);
       console.log(auth?.isAuthenticated);
-    }, [auth])
+    }, [auth])*/
 
-    if(!auth) {
+    if(!auth.isAuthenticated) {
         return <Navigate to="/" />
     }
 
