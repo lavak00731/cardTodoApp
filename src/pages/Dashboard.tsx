@@ -31,6 +31,10 @@ export const Dashboard = () => {
             categoriesList.map( ({id, name}:categoryInterface) => {
               return <Col key={id}>
                       <Title level={2}>{name}</Title>
+                      
+                      {
+                        categoriesList.map()
+                      }
                     </Col>
             })
           }
