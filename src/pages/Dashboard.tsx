@@ -1,5 +1,4 @@
 import { useContext } from "react";
-import { Layout, Row, Col } from "antd";
 import { categoryContext } from "../context/categoryContext";
 import { cardContext } from "../context/cardContext";
 import Title from "antd/es/typography/Title";
@@ -15,32 +14,21 @@ export const Dashboard = () => {
     return (<h1>Cargando...</h1>)
   }
 
-  const layoutStyle = {
-    minHeight: '100lvh',
-  }
 
 
   return (
-    <Layout style={layoutStyle}>
-      <Header></Header>
-      <Content>      
-        <Title className="text-center">Dashboard</Title>
-        <hr/>
-        <Row justify={"center"} gutter={[32, 16]}>
-        {
-            categoriesList.map( ({id, name}:categoryInterface) => {
-              return <Col key={id}>
-                      <Title level={2}>{name}</Title>
+    
+        /* {
+            categoriesList.map(({id, name}: categoryInterface) => {
+              return <div key={id}>
+                      <h2 >{name}</h2>
                       
                       {
                         categoriesList.map()
                       }
-                    </Col>
+                    </div>
             })
-          }
-        </Row>      
-      </Content>
-      <Footer></Footer>
-    </Layout>
+          } */
+       <div>Dashboard</div>
   )
 }
