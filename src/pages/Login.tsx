@@ -1,18 +1,23 @@
 
 import { appContext } from '../context/appContext';
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 export const Login = () => {
 
   const {isAuthenticated, login} = useContext(appContext);
   const navigate = useNavigate();
+  const [userName, setUserName] = useState();
+  const [passWord, setPassWord] = useState();
 
-  const submitHandler = () => {
-    login()
-    if(isAuthenticated) {
-      return navigate("/dashboard", {replace: true})
-    }
+  const submitHandler = (e) => {
+    e.preventDefault();
+    if(userName !== "" && passWord !== "") {
+      login()
+      if(isAuthenticated) {
+        return navigate("/dashboard", {replace: true})
+      }
+    } 
   }
   
   return (
@@ -24,14 +29,14 @@ export const Login = () => {
           <fieldset>
             <div className='mb-6 mx-auto max-w-xs'>
               <label className="font-bold block mb-2 " htmlFor="user">Username</label>
-              <input className="border-2 border-teal-950 rounded-lg bg-white p-2 text-base w-full" type="text" name="user" id="user"/>  
+              <input className="border-2 border-teal-950 rounded-lg bg-white p-2 text-base w-full" type="text" name="user" id="user" onChange={setUserName} required/>  
             </div>
             <div className='mb-6 mx-auto max-w-xs'>
               <label className="font-bold block mb-2" htmlFor="pass">Password</label>
-              <input className="border-2 border-teal-950 rounded-lg bg-white p-2 text-base w-full" type="password" name="pass" id="pass"/>  
+              <input className="border-2 border-teal-950 rounded-lg bg-white p-2 text-base w-full" type="password" name="pass" id="pass" onChange={setPassWord} required/>  
             </div>
             <div className="mb-0 max-w-xs mx-auto">
-              <button type="button" className="bg-blue-900 px-4 py-2 text-white border-black rounded-lg w-full">Submit</button>
+              <button type="submit" className="bg-blue-900 px-4 py-2 text-white border-black rounded-lg w-full">Submit</button>
             </div>            
           </fieldset>
         </form>
