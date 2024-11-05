@@ -4,9 +4,9 @@
         "name": "Prepare drawing",
         "initDate": "10/14/2024",
         "dueDate": "11/25/2024",
-        "category": "In Development",
+        "category": "Development",
         "comment": "Some odd task",
-        "tags": "sample1"
+        "tags": ["sample1"]
     },
     {
         "id": 2,
@@ -15,7 +15,7 @@
         "dueDate": "12/25/2024",
         "category": "Design",
         "comment": "Designing something",
-        "tags": "sample2"
+        "tags": ["sample2"]
     },
     {
         "id": 3,
@@ -24,6 +24,6 @@
         "dueDate": "12/25/2024",
         "category": "Ready for Development",
         "comment": "Ready to start development",
-        "tags": "sample3"
+        "tags": ["sample3", "sample1"]
     }
 ]
