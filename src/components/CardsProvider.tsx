@@ -33,7 +33,7 @@ const CardsProvider = (props: { children: ReactNode }) => {
     // }, [tasks]);
 
   return (
-    <cardContext.Provider value={{tasks, isLoading}}>
+    <cardContext.Provider value={{tasks}}>
         {props.children}
     </cardContext.Provider>
   )
