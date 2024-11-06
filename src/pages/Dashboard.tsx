@@ -8,7 +8,6 @@ import { CardComponent } from "../components/CardComponent";
 
 export const Dashboard = () => {
   const {categoriesList, setCategoriesList, isLoading} = useContext(categoryContext);
-  console.log(cardContext)
   const { tasks } = useContext(cardContext);
   // const cacheadoSuma = useMemo(() => x + y, [x, y]);
 
