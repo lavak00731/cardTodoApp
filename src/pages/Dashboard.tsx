@@ -7,9 +7,8 @@ import { CardComponent } from "../components/CardComponent";
 
 
 export const Dashboard = () => {
-
-  const {categoriesList, setCategoriesList, isLoading} = useContext(categoryContext);
   const { tasks } = useContext(cardContext);
+  const {categoriesList, setCategoriesList, isLoading} = useContext(categoryContext);
   // const cacheadoSuma = useMemo(() => x + y, [x, y]);
 
   // const handleClick = useCallback(() => {
@@ -23,7 +22,8 @@ export const Dashboard = () => {
   return (
     <>
       <header>
-        <nav></nav>
+        <nav>
+        </nav>
       </header>
       <main aria-labelledby="h1" className="container mx-auto">
         <h1 id="h1" className="text-6xl mb-7 mt-7">Dashboard</h1>

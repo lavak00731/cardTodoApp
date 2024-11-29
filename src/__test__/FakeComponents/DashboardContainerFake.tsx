@@ -1,16 +1,19 @@
-import React from 'react';
-import { Dashboard } from '../pages/Dashboard';
+
+import { Dashboard } from './../../pages/Dashboard';
 import { cardContext } from '../../context/cardContext';
 import { appContext } from '../../context/appContext';
 import { categoryContext } from '../../context/categoryContext';
+import  tasksFake from '../Stubs/tasksFake';
+import categoriesListFake from '../Stubs/categoriesListFake';
 
 
-export const DashboardContainerFake = () => {
+export const DashboardContainerFake = ({setCategoriesList, isLoading}) => {
+   
   return (
 
-        <appContext.Provider value={{ isAuthenticated: authenticated, login: () => {} }}>
-            <cardContext.Provider value={{tasks: tasks}}>
-                <categoryContext.Provider value={{categoriesList, setCategoriesList, isLoading}}>
+        <appContext.Provider value={{ isAuthenticated: true, login: () => {} }}>
+            <cardContext.Provider value={{ tasks: tasksFake }}>
+                <categoryContext.Provider value={{categoriesList: categoriesListFake, setCategoriesList:() =>{}, isLoading}}>
                     <Dashboard />
                 </categoryContext.Provider>
             </cardContext.Provider>

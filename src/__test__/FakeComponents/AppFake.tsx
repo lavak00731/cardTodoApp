@@ -6,8 +6,8 @@ import { Dashboard } from '../../pages/Dashboard.tsx';
 import { Auth } from '../../components/Auth.tsx';
 import { appContext } from '../../context/appContext.tsx';
 import { categoryContext } from '../../context/categoryContext.tsx';
-import tasks from "../Stubs/tasks";
-import categoriesList from '../Stubs/categoriesList.ts';
+import tasks from "../Stubs/tasksFake.ts";
+import categoriesList from '../Stubs/categoriesListFake.ts';
 
 interface AppFakeInterface {
     authenticated: boolean;

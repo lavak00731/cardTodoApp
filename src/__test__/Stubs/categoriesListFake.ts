@@ -1,5 +1,5 @@
 import { categoryInterface } from "../../interfaces/categoryInterface"
-const categoriesList:categoryInterface[] = [
+const categoriesListFake:categoryInterface[] = [
     {
         "id": 1,
         "name": "Investigate Design"
@@ -29,4 +29,4 @@ const categoriesList:categoryInterface[] = [
         "name": "Ready for Client"
     }
 ] 
-export default categoriesList
+export default categoriesListFake

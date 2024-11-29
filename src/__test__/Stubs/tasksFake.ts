@@ -1,5 +1,5 @@
 import { taskInterface } from "../../interfaces/taskInterface";
-const tasks: taskInterface[] = [
+const tasksFake: taskInterface[] = [
     {
         "id": 1,
         "name": "Prepare drawing",
@@ -29,4 +29,4 @@ const tasks: taskInterface[] = [
     }
 ]
 
-export default tasks;
+export default tasksFake;
