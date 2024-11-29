@@ -4,3 +4,9 @@
 .text-center {
     text-align: center;
 }
+nav [aria-current] {
+    border: none;
+    color: rgb(19 78 74 / var(--tw-bg-opacity));
+    background-color: white;
+    border-bottom: 2px solid rgb(19 78 74);
+} 

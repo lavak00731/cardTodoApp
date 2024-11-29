@@ -4,7 +4,8 @@ import { Auth } from './../components/Auth';
 import { Dashboard } from './../pages/Dashboard';
 import { NoPage } from '../pages/NoPage';
 import { Task } from '../pages/Task';
-import { CreateOrEditTagsAndCategories } from '../pages/CreateOrEditTagsAndCategories';
+import { Categories } from '../pages/Categories';
+import { Tags } from '../pages/Tags';
 
 export const RoutesComp = () => {
   return (
@@ -13,8 +14,8 @@ export const RoutesComp = () => {
         <Route  element={<Auth />}>
             <Route path="/dashboard" element={<Dashboard />}></Route>
             <Route path="/edit-task/:id" element={<Task />}></Route>
-            <Route path="/create-or-edit-tags" element={<CreateOrEditTagsAndCategories/>}></Route>
-            <Route path="/create-or-edit-categories" element={<CreateOrEditTagsAndCategories/>}></Route>
+            <Route path="/tags" element={<Tags/>}></Route>
+            <Route path="/categories" element={<Categories/>}></Route>
         </Route>
         <Route path="*" element={<NoPage/>}></Route>
      </Routes>

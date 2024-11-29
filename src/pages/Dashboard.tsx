@@ -4,7 +4,7 @@ import { cardContext } from "../context/cardContext";
 import { categoryInterface } from "../interfaces/categoryInterface";
 import { taskInterface } from "../interfaces/taskInterface";
 import { CardComponent } from "../components/CardComponent";
-
+import { Navbar } from "../components/Navbar";
 
 export const Dashboard = () => {
   const { tasks } = useContext(cardContext);
@@ -21,9 +21,8 @@ export const Dashboard = () => {
 
   return (
     <>
-      <header>
-        <nav>
-        </nav>
+      <header className="container mx-auto">
+        <Navbar />
       </header>
       <main aria-labelledby="h1" className="container mx-auto">
         <h1 id="h1" className="text-6xl mb-7 mt-7">Dashboard</h1>
